@@ -1,67 +1,59 @@
-# Stock-Market-Analysis
+
+# Stock Market Price Predictor
+
 This project is a web-based application that predicts future stock prices using a deep learning model built with Keras. It utilizes historical stock data retrieved from Yahoo Finance and provides users with visualizations and predictions to aid investment insights.
 
-🔧 Tech Stack
-Python
+## Tech Stack
 
-Streamlit – for creating the web app interface
+- Python  
+- Streamlit – for creating the web app interface  
+- Keras/TensorFlow – for building and loading the prediction model  
+- yfinance – for fetching real-time historical stock data  
+- Matplotlib – for plotting stock price trends and predictions  
+- Scikit-learn – for data preprocessing  
 
-Keras/TensorFlow – for building and loading the prediction model
+## Features
 
-yfinance – for fetching real-time historical stock data
+- Input any valid stock ticker (e.g., `GOOG`, `AAPL`) to analyze  
+- Visualize raw stock prices along with 50, 100, and 200-day moving averages  
+- Predict future stock prices using a trained LSTM model  
+- Compare predicted prices against the actual values using interactive charts  
 
-Matplotlib – for plotting stock price trends and predictions
+## Model Details
 
-Scikit-learn – for data preprocessing
+- The LSTM model is trained on the stock's closing prices  
+- Data is normalized using MinMaxScaler  
+- Uses a 100-day look-back window for predictions  
+- Predictions are rescaled to their original value for display  
 
-💡 Features
-📥 Input any valid stock ticker (e.g., GOOG, AAPL) to analyze
+## How to Run the App
 
-📊 Visualize raw stock prices along with 50, 100, and 200-day moving averages
+1. Clone the repository:  
+   ```bash
+   git clone https://github.com/your-username/stock-market-predictor.git  
+   cd stock-market-predictor  
+   ```
 
-🤖 Predict future stock prices using a trained LSTM model
+2. Install required packages:  
+   ```bash
+   pip install -r requirements.txt  
+   ```
 
-📈 Compare predicted prices against the actual values using interactive charts
+3. Launch the app:  
+   ```bash
+   streamlit run app.py  
+   ```
 
-🧠 Model Details
-The LSTM model is trained on the stock's closing prices.
+4. Enter a stock symbol and visualize its trends and predictions.
 
-Data is normalized using MinMaxScaler.
+## Files Included
 
-Uses a 100-day look-back window for predictions.
+- `app.py` – Main Streamlit web app  
+- `StockPrediction.ipynb` – Jupyter Notebook with model training and exploration  
+- `Stock Prediction Model.keras` – Pre-trained Keras model for stock prediction  
 
-Predictions are rescaled to their original value for display.
+## Notes
 
-🚀 How to Run the App
-Clone the repository:
+- Ensure an active internet connection for fetching data via yfinance  
+- The app currently loads the model from a local path; modify the model path if needed when deploying  
 
-bash
-Copy
-Edit
-git clone https://github.com/your-username/stock-market-predictor.git
-cd stock-market-predictor
-Install required packages:
-
-bash
-Copy
-Edit
-pip install -r requirements.txt
-Launch the app:
-
-bash
-Copy
-Edit
-streamlit run app.py
-Enter a stock symbol and visualize its trends and predictions.
-
-📁 Files Included
-app.py – Main Streamlit web app
-
-StockPrediction.ipynb – Jupyter Notebook with model training and exploration
-
-Stock Prediction Model.keras – Pre-trained Keras model for stock prediction
-
-📌 Notes
-Ensure an active internet connection for fetching data via yfinance.
-
-The app currently loads the model from a local path; modify the model path if needed when deploying
